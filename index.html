@@ -1,1 +1,52 @@
+<html>
+    <head>
+        <center><u><h1>Form</u></h1></center>
+        <style>
+            input#name:invalid:focus{
+                border:1px solid red;
+            }
+            input#email:invalid:focus{
+                border:1px solid red;
+            }
+            .button:hover{opacity: 1;}
+            .button{
+                padding:16px 32px;
+                background-color:#f4511e;
+                color:white;
+                font-size: 16px;
+                display: inline-block;
+                opacity: 0.6;
+                transition: 0.3s;
+                cursor:pointer;
+                margin-right: 180px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <form id = "user-form">
+                <label for="Name" style="margin-right: 50px;">Name*</label>
+                <input style="margin-left: 50px;" type = "text" id = "name" name = "name"><br>
 
+                <label for="Email" style="margin-right: 50px;">Email*</label>
+                <input style="margin-left: 50px;" "text" id = "email" name = "email"><br>
+
+                <label for="Password" style="margin-right: 50px;">Password*</label>
+                <input style="margin-left: 25px;" type = "text" id = "password" name = "password"><br>
+
+                <label for="dob" style="margin-right: 70px;">Date of birth*</label>
+                <input style="margin-left: 25px;" type = "date" id = "dob" name = "dob"><br>
+
+                <input type="checkbox" id="acceptTerms" name = "acceptTerms">
+                <label for="acceptTerms" style="margin-right: 105px;">Accept Terms & Conditions</label><br>
+
+                <br>
+                <button class = "button" type="submit">Submit</button>
+
+            </form>
+        </center>
+
+        <!--Script-->
+        <script src="./index.js"></script>
+    </body>
+</html>
