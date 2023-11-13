@@ -56,8 +56,12 @@ const saveUserForm = (event) => {
         dob,
         acceptedTermsandConditions
     }
+    
+    let date = dob.split("-");
 
-    if(Number(dob.substring(6,9)) < 2005 || Number(dob.substring(6,9)) > 1968){
+    let year = Number(date[0]);
+
+    if(year < 2005 && year > 1968){
         userEntries.push(entry);
     }
     
