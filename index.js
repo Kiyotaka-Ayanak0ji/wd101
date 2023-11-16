@@ -4,12 +4,9 @@ function dateBlock(dob){
 
     let diff = (curr_yr-dob_yr);
 
-    if(diff > 18 && diff < 55){
-        return true;
-    }
-    else{
+    if(diff < 18 || diff > 55){
+        dob.value = "";
         alert("Age must be in between 18 and 55 years !");
-        return false;
     }
 };
 
@@ -65,21 +62,21 @@ const saveUserForm = (event) => {
     const dob = document.getElementById("dob").value;
     const acceptedTermsandConditions = document.getElementById("acceptTerms").checked;
     
-    if(dateBlock(dob)){
-        const entry = {
-            name,
-            email,
-            password,
-            dob,
-            acceptedTermsandConditions
-        }
-        
-        
-        userEntries = retrieveEntries();
-        userEntries.push(entry);
-        
-        localStorage.setItem("user-entries",JSON.stringify(userEntries));
+    dateBlock(dob);
+    
+    const entry = {
+        name,
+        email,
+        password,
+        dob,
+        acceptedTermsandConditions
     }
+    
+    
+    userEntries = retrieveEntries();
+    userEntries.push(entry);
+    
+    localStorage.setItem("user-entries",JSON.stringify(userEntries));
     
     displayEntries();
     userForm.reset();
