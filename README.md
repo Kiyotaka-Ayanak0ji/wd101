@@ -1,2 +1,2 @@
 # wd101 : 
-_Pupilfirst WD101(Web Development Capstone Project):_ A sample registration form
+Pupilfirst WD101(Web Development Capstone Project): A sample registration form
