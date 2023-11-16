@@ -4,12 +4,13 @@ function dateBlock(dob){
 
     let diff = (curr_yr-dob_yr);
 
-    if(diff <= 18 || diff >= 55){
+    if(diff > 18 && diff < 55){
+        return true;
+    }
+    else{
         alert("Age must be in between 18 and 55 years !");
         return false;
     }
-
-    return true;
 };
 
 let userForm = document.getElementById("user-form");
