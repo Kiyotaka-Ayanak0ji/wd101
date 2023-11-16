@@ -1,14 +1,3 @@
-function dateBlock(dob){
-    let dob_yr = dob.split("-")[0];
-    let curr_yr = new Date().getFullYear();
-
-    let diff = (curr_yr-dob_yr);
-
-    if(diff < 18 || diff > 55){
-        dob = "";
-        alert("Age must be in between 18 and 55 years !");
-    }
-};
 
 let userForm = document.getElementById("user-form");
 
@@ -62,7 +51,15 @@ const saveUserForm = (event) => {
     const dob = document.getElementById("dob").value;
     const acceptedTermsandConditions = document.getElementById("acceptTerms").checked;
     
-    dateBlock(dob);
+    let curr = new Date();
+    var max_yr = new Date(today);
+    maxDate.setFullYear(maxDate.getFullYear() - 18);
+    var min_yr = new Date(today);
+    minDate.setFullYear(minDate.getFullYear() - 56);
+
+    document.getElementById("dob").setAttribute("max", max_yr.toISOString().slice(0, 10));
+    document.getElementById("dob").setAttribute("min", min_yr.toISOString().slice(0, 10));
+    document.getElementById("user-form").addEventListener("submit", submit);
     
     const entry = {
         name,
