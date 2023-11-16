@@ -5,7 +5,7 @@ function dateBlock(dob){
     let diff = (curr_yr-dob_yr);
 
     if(diff < 18 || diff > 55){
-        dob.value = "";
+        dob = "";
         alert("Age must be in between 18 and 55 years !");
     }
 };
