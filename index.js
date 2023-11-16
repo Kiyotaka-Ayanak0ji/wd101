@@ -32,22 +32,22 @@ const displayEntries = () => {
     const entries = retrieveEntries();
     
     const tableEntries = entries.map((entry) => {
-        const nameCell = `<td class = 'border px-4 py-2'>${entry.name}</td>`;
-        const emailCell = `<td class = 'border px-4 py-2'>${entry.email}</td>`;
-        const passwordCell = `<td class = 'border px-4 py-2'>${entry.password}</td>`;
-        const dobCell = `<td class = 'border px-4 py-2'>${entry.dob}</td>`;
-        const termsandConditionsCell = `<td class = 'border px-4 py-2'>${entry.acceptedTermsandConditions}</td>`;
+        const nameCell = `<td class = 'mx-auto border px-4 py-2'>${entry.name}</td>`;
+        const emailCell = `<td class = 'mx-auto border px-4 py-2'>${entry.email}</td>`;
+        const passwordCell = `<td class = 'mx-auto border px-4 py-2'>${entry.password}</td>`;
+        const dobCell = `<td class = 'mx-auto border px-4 py-2'>${entry.dob}</td>`;
+        const termsandConditionsCell = `<td class = 'mx-auto border px-4 py-2'>${entry.acceptedTermsandConditions}</td>`;
         
         const row = `<tr>${nameCell} ${emailCell} ${passwordCell} ${dobCell} ${termsandConditionsCell}</tr>`;
         return row;
     }).join('\n');
     
     const table = `<table class = 'table-auto w-full'<tr>
-    <th class = 'px-4 py-2'> <u> Name </u> </th>
-    <th class = 'px-4 py-2'> <u> Email </u> </th>
-    <th class = 'px-4 py-2'> <u> Password </u> </th>
-    <th class = 'px-4 py-2'> <u> dob </u> </th>
-    <th class = 'px-4 py-2'> <u> accepted terms? </u> </th>
+    <th class = 'px-4 py-2 mx-auto my-auto font-semi-bold underline text-l'> Name </th>
+    <th class = 'px-4 py-2 mx-auto my-auto font-semi-bold underline text-l'> Email </th>
+    <th class = 'px-4 py-2 mx-auto my-auto font-semi-bold underline text-l'> Password </th>
+    <th class = 'px-4 py-2 mx-auto my-auto font-semi-bold underline text-l'> Dob </th>
+    <th class = 'px-4 py-2 mx-auto my-auto font-semi-bold underline text-l'> Accepted terms? </th>
     </tr>${tableEntries} </table>`;
     
     let details = document.getElementById("user-entries");
