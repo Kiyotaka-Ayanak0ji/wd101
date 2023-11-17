@@ -65,11 +65,12 @@ const saveUserForm = (event) => {
         localStorage.setItem("user-entries",JSON.stringify(userEntries));
     }
 
-    var today = new Date();
-    var maxD = new Date(today);
-    maxDate.setFullYear(maxDate.getFullYear() - 18);
-    var minD = new Date(today);
+    let today = new Date();
+    let maxD = new Date(today);
+    maxD.setFullYear(maxD.getFullYear() - 18);
+    let minD = new Date(today);
     minD.setFullYear(minD.getFullYear() - 56);
+    
     document.getElementById("dob").setAttribute("max", maxD.toISOString().slice(0, 10));
     document.getElementById("dob").setAttribute("min", minD.toISOString().slice(0, 10));
     document.getElementById("form").addEventListener("submit", submit);
