@@ -62,7 +62,6 @@ const saveUserForm = (event) => {
     userEntries.push(entry);
     
     localStorage.setItem("user-entries",JSON.stringify(userEntries));
-    }
 
     let curr = new Date();
     
