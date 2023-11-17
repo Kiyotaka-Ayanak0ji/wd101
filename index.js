@@ -66,8 +66,10 @@ const saveUserForm = (event) => {
     }
 
     let curr = new Date();
+    
     let maxD = new Date(curr);
     maxD.setFullYear(maxD.getFullYear() - 18);
+    
     let minD = new Date(curr);
     minD.setFullYear(minD.getFullYear() - 56);
     
