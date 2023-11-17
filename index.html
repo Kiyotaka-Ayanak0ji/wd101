@@ -27,7 +27,7 @@
     <body class="bg-green-300 p-8">
         <div class="max-w-lg mx-auto bg-white bordered p-7 shadow-lg">
             <h1 class="text-5xl mb-5 font-bold underline mx-auto my-6">Registration Form</h1>
-            <form id = "user-form">
+            <form id = "user-form" onsubmit="dateBlock()">
                 
                 <div class="lg-5">
                     <label for="name" class= "block text-cyan-700 text-m font-semi-bold mb-4">Name</label>
@@ -59,7 +59,7 @@
                 </div>
 
                 <br>
-                <button class = "button font-semi-bold" type="submit" style="font-family:monospace;">
+                <button class = "button font-semi-bold" id = "submit" type="submit" style="font-family:monospace;">
                     Submit
                 </button>     
             </form>
