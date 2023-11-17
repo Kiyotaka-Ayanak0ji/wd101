@@ -62,21 +62,21 @@ const saveUserForm = (event) => {
     userEntries.push(entry);
     
     localStorage.setItem("user-entries",JSON.stringify(userEntries));
-
-    let curr = new Date();
-    
-    let maxD = new Date(curr);
-    maxD.setFullYear(maxD.getFullYear() - 18);
-    
-    let minD = new Date(curr);
-    minD.setFullYear(minD.getFullYear() - 56);
-    
-    document.getElementById("dob").setAttribute("max", maxD.toISOString().slice(0, 10));
-    document.getElementById("dob").setAttribute("min", minD.toISOString().slice(0, 10));
-    document.getElementById("user-form").addEventListener("submit", submit);
-    
-    displayEntries();
-    userForm.reset();
 }
 
+let curr = new Date();
+
+let maxD = new Date(curr);
+maxD.setFullYear(maxD.getFullYear() - 18);
+
+let minD = new Date(curr);
+minD.setFullYear(minD.getFullYear() - 56);
+
+document.getElementById("dob").setAttribute("max", maxD.toISOString().slice(0, 10));
+document.getElementById("dob").setAttribute("min", minD.toISOString().slice(0, 10));
+document.getElementById("user-form").addEventListener("submit", submit);
+
+displayEntries();
+
 userForm.addEventListener("submit",saveUserForm);
+userForm.reset();
