@@ -73,9 +73,10 @@ const saveUserForm = (event) => {
     
     document.getElementById("dob").setAttribute("max", maxD.toISOString().slice(0, 10));
     document.getElementById("dob").setAttribute("min", minD.toISOString().slice(0, 10));
-    document.getElementById("form").addEventListener("submit", submit);
+    document.getElementById("user-form").addEventListener("submit", submit);
+    
+    displayEntries();
+    userForm.reset();
 }
 
 userForm.addEventListener("submit",saveUserForm);
-displayEntries();
-userForm.reset();
