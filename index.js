@@ -1,17 +1,3 @@
-function dateBlock(dob){
-    let dob_yr = dob.split("-")[0];
-    let curr_yr = new Date().getFullYear();
-
-    let diff = (curr_yr-dob_yr);
-
-    if(diff <= 18 || diff >= 55){
-        alert("Age must be in between 18 and 55 years !");
-        return false;
-    }
-
-    return true;
-};
-
 let userForm = document.getElementById("user-form");
 
 let userEntries = [];
@@ -73,12 +59,20 @@ const saveUserForm = (event) => {
             acceptedTermsandConditions
         }
         
-        
         userEntries = retrieveEntries();
         userEntries.push(entry);
         
         localStorage.setItem("user-entries",JSON.stringify(userEntries));
     }
+
+    var today = new Date();
+    var maxD = new Date(today);
+    maxDate.setFullYear(maxDate.getFullYear() - 18);
+    var minD = new Date(today);
+    minD.setFullYear(minD.getFullYear() - 56);
+    document.getElementById("dob").setAttribute("max", maxD.toISOString().slice(0, 10));
+    document.getElementById("dob").setAttribute("min", minD.toISOString().slice(0, 10));
+    document.getElementById("form").addEventListener("submit", submit);
     
     displayEntries();
     userForm.reset();
