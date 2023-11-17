@@ -50,25 +50,25 @@ const saveUserForm = (event) => {
     const dob = document.getElementById("dob").value;
     const acceptedTermsandConditions = document.getElementById("acceptTerms").checked;
     
-    if(dateBlock(dob)){
-        const entry = {
-            name,
-            email,
-            password,
-            dob,
-            acceptedTermsandConditions
-        }
-        
-        userEntries = retrieveEntries();
-        userEntries.push(entry);
-        
-        localStorage.setItem("user-entries",JSON.stringify(userEntries));
+    
+    const entry = {
+        name,
+        email,
+        password,
+        dob,
+        acceptedTermsandConditions
+    }
+    
+    userEntries = retrieveEntries();
+    userEntries.push(entry);
+    
+    localStorage.setItem("user-entries",JSON.stringify(userEntries));
     }
 
-    let today = new Date();
-    let maxD = new Date(today);
+    let curr = new Date();
+    let maxD = new Date(curr);
     maxD.setFullYear(maxD.getFullYear() - 18);
-    let minD = new Date(today);
+    let minD = new Date(curr);
     minD.setFullYear(minD.getFullYear() - 56);
     
     document.getElementById("dob").setAttribute("max", maxD.toISOString().slice(0, 10));
